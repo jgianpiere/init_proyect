@@ -18,3 +18,5 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.sublime-proyect
 *.sublime-workspace
 *.sublime-settings
+*.sublime-*
+application/config/constants.php
