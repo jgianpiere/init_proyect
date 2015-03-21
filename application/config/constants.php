@@ -1,4 +1,40 @@
 <?php
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP 5.2.4 or newer
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014, British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package	CodeIgniter
+ * @author	EllisLab Dev Team
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright	Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license	http://opensource.org/licenses/MIT	MIT License
+ * @link	http://codeigniter.com
+ * @since	Version 1.0.0
+ * @filesource
+ */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
@@ -84,3 +120,50 @@ define('EXIT_USER_INPUT', 7); // invalid user input
 define('EXIT_DATABASE', 8); // database error
 define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+define('THEME', 'default'); // tema usandose.
+
+define('PORT', ''); // Puerto de conexion en caso existe usar (:00) 
+define('DOMAIN', 'localhost'); // Dominio de la aplicacion.
+define('PROYECT', 'init_proyect/'); // sub carpeta del proyecto
+define('BASE_PATH', 'http://'.DOMAIN.PORT.'/'.PROYECT); // ruta origen de la aplicacion
+
+define('STATICS', BASE_PATH.'statics/'); // carpeta origen de los recursos estaticos de la aplicacion.
+
+define('CSS'		, STATICS.'Themes/'.THEME.'/css/'	);
+define('CSSLIB'		, STATICS.'css/'					);
+define('JS' 		, STATICS.'Themes/'.'/js/'			);
+define('JSLIB' 		, STATICS.'Themes/'.THEME.'/js/'		);
+define('IMG'		, STATICS.'Themes/'.THEME.'/img/'	);
+define('IMGLIB' 	, STATICS.'img/'					);
+define('UPLOAD' 	, STATICS.'upload/'					);
+define('UPLOADLIB' 	, STATICS.'Themes/'.THEME.'/upload/'	);
+define('GALERY' 	, STATICS.'Themes/'.THEME.'/galery/'	);
+define('GALERYLIB' 	, STATICS.'galery/'					);
+define('PLUGINS' 	, STATICS.'Themes/'.THEME.'/plugins/');
+define('PLUGINSLIB'	, STATICS.'plugins/'				);
+define('APIS' 		, STATICS.'Themes/'.THEME.'/apis/'	);
+define('APISLIB' 	, STATICS.'apis/'					);
+define('APPS' 		, STATICS.'Themes/'.THEME.'/apps/'	);
+define('APPSLIB' 	, STATICS.'apps/'					);
+define('FONTS' 		, STATICS.'Themes/'.THEME.'/fonts/'	);
+define('FONTSLIB' 	, STATICS.'fonts/'					);
+
+define('KEY_ENCRYPT_URL', '9a4842d5c6c7257254041859feac5ff0');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* End of file constants.php */
+/* Location: ./application/config/constants.php */
