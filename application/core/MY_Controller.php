@@ -17,7 +17,9 @@ class MY_Controller extends CI_Controller{
 
     public function Theme($view,$usepath = true){
 
-        $theme =    $this->config->item('themes')[$this->config->item('ThemeActive')];
+        $stheme =    $this->config->item('ThemeActive');
+        $themes =    $this->config->item('themes');
+        $theme  =    $themes[$stheme]; 
         
         $data['data']['css']			=	isset($this->css) 		? $this->css 		: false;
         $data['data']['csslib']			=	isset($this->css_lib) 	? $this->css_lib 	: false;
@@ -49,13 +51,21 @@ class MY_Controller extends CI_Controller{
 
     public function Template($view,$usepath,$Params){
         $this->load->library('parser');
-		$theme = THEME;
-		$vista = $usepath ? 'Themes/'.$theme.'interfaces/'.$view : $view;
+		
+        $stheme =    $this->config->item('ThemeActive');
+        $themes =    $this->config->item('themes');
+        $theme  =    $themes[$stheme]; 
+
+		$vista = $usepath ? 'Themes/'.$theme['folder'].'interfaces/'.$view : $view;
         $this->parser->parse($vista,$Params,FALSE);
     }
 
     public function innerView($view,$usepath = true){
-        $theme = THEME;
+        
+        $stheme =    $this->config->item('ThemeActive');
+        $themes =    $this->config->item('themes');
+        $theme  =    $themes[$stheme]; 
+
         $data['data']['css']			=	isset($this->css) 		? $this->css 		: false;
         $data['data']['csslib']			=	isset($this->css_lib) 	? $this->css_lib 	: false;
         $data['data']['js']				=	isset($this->js) 		? $this->js 		: false;
@@ -63,14 +73,18 @@ class MY_Controller extends CI_Controller{
         $data['data']['urljs']			=	isset($this->urlscript) ? $this->urlscript 	: false;
         $data['data']['urlcss']			=	isset($this->urlstyle) 	? $this->urlstyle 	: false;
 
-        $data['view']					=	$usepath ? 'Themes/'.$theme.'interfaces/'.$view : $view;
+        $data['view']					=	$usepath ? 'Themes/'.$theme['folder'].'interfaces/'.$view : $view;
 
-        $this->load->view('Themes/'.$theme.'notemplate.php',$data);
+        $this->load->view('Themes/'.$theme['folder'].'notemplate.php',$data);
     }
 
 	public function includeView($view,$data = ''){
-		$theme = THEME;
-        return $this->load->view('Themes/'.$theme.'includes/html/'.$view,$data,TRUE);
+		
+        $stheme =    $this->config->item('ThemeActive');
+        $themes =    $this->config->item('themes');
+        $theme  =    $themes[$stheme]; 
+
+        return $this->load->view('Themes/'.$theme['folder'].'includes/html/'.$view,$data,TRUE);
 	}
 
 }
