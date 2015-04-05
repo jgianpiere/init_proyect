@@ -49,15 +49,19 @@ class MY_Controller extends CI_Controller{
         $this->load->view('Themes/'.$theme['folder'].'template.php',$data);
     }
 
-    public function Template($view,$usepath,$Params){
+    public function Template($view,$Params,$usepath,$isreturn = false){
         $this->load->library('parser');
-		
+        
         $stheme =    $this->config->item('ThemeActive');
         $themes =    $this->config->item('themes');
-        $theme  =    $themes[$stheme]; 
+        $theme  =    $themes[$stheme];
 
-		$vista = $usepath ? 'Themes/'.$theme['folder'].'interfaces/'.$view : $view;
-        $this->parser->parse($vista,$Params,FALSE);
+        $vista = $usepath ? 'Themes/'.$theme['folder'].'interfaces/'.$view : $view;
+        if($isreturn):
+            return $this->parser->parse($vista,$Params,TRUE);
+        else:
+            $this->parser->parse($vista,$Params,FALSE);
+        endif;
     }
 
     public function innerView($view,$usepath = true){

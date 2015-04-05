@@ -149,7 +149,7 @@ define('APPSLIB' 	, STATICS.'apps/'					);
 define('FONTS' 		, STATICS.'Themes/'.THEME.'/fonts/'	);
 define('FONTSLIB' 	, STATICS.'fonts/'					);
 
-define('KEY_ENCRYPT_URL', '9a4842d5c6c7257254041859feac5ff0');
+define('KEY_ENCRYPT_URL', '213ab1af800ef000ac68c8930ce6dbc8');
 
 
 
